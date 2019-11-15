@@ -76,8 +76,8 @@ function createCalendar(json){
 		confOther.contentYear = document.getElementById("selectYear").style;
 		confOther.contentDate = document.getElementById("contentDate");
 
-		styleArrow = "border:1px solid #eee;cursor:pointer;padding:1;line-height:8px;";
-		styleDate = "font-family:"+confStyle.family+"font-weight:bold;font-size:"+confStyle.size+"px;color:#313131;border:1px solid #eee;cursor:pointer;"
+		styleArrow = "border:100px solid #eee;cursor:pointer;padding:1;line-height:8px;";
+		styleDate = "font-family:"+confStyle.family+"font-weight:bold;font-size:"+confStyle.size+"px;color:#313131;border:100px solid #eee;cursor:pointer;"
 
 		headCalendar = "<table width='100%' cellpadding='1' cellspacing='2'><tr><td style='width:5px'><div id='spanLeft' style='"+styleArrow+"' onmouseover='overMonth(this);' onclick='decMonth()' onmouseout='clearInterval(confOther.interval1);outMonth(this);' onmousedown='clearTimeout(confOther.timeout1);confOther.timeout1=setTimeout(\"StartDecMonth()\",500)' onmouseup='clearTimeout(confOther.timeout1);clearInterval(confOther.interval1)'><img id='changeLeft' src='"+confSource.left+"'></div></td>";
 		headCalendar += "<td style='width:5px'><div id='spanRight' style='"+styleArrow+"' onmouseover='overMonth(this);' onmouseout='clearInterval(confOther.interval1);outMonth(this);' onclick='incMonth()' onmousedown='clearTimeout(confOther.timeout1);confOther.timeout1=setTimeout(\"StartIncMonth()\",500)' onmouseup='clearTimeout(confOther.timeout1);clearInterval(confOther.interval1)'><img id='changeRight' src='"+confSource.right+"'></div></td>";
