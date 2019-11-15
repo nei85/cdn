@@ -1,7 +1,7 @@
 var confJson = {day:[], month:[], year:[], dateText:[], titleText:[], href:[]},
 	confDate = {monthName:[], dayName:[], today:new Date()},
 	confToday = {dateNow:confDate.today.getDate(), monthNow:confDate.today.getMonth(), yearNow:confDate.today.getYear()},
-	confStyle = {anchor:'text-decoration:none;color:#000;cursor:default;', border:'border:100px solid #6F695A;', family:'verdana,arial;', size:11, bgover:'#d2d2d2'},
+	confStyle = {anchor:'text-decoration:none;color:#000;cursor:default;', border:'border:1px solid #000;', family:'verdana,arial;', size:11, bgover:'#d2d2d2'},
 	confSource = {right:'https://cdn.rawgit.com/jmacuna/calendar-widget/master/right.gif', left:'https://cdn.rawgit.com/jmacuna/calendar-widget/master/left.gif', drop:'https://cdn.rawgit.com/jmacuna/calendar-widget/master/drop.gif'}
 	confOther = {content:null, contentMonth:null, contentYear:null, contentDate:null, monthSelected:0, yearSelected:0, dateSelected:0, monthPosition:false, monthConstructed:false, yearConstructed:false, interval1:null, interval2:null, timeout1:null, timeout2:null, startYear:0}
 
@@ -76,8 +76,8 @@ function createCalendar(json){
 		confOther.contentYear = document.getElementById("selectYear").style;
 		confOther.contentDate = document.getElementById("contentDate");
 
-		styleArrow = "border:100px solid #eee;cursor:pointer;padding:1;line-height:8px;";
-		styleDate = "font-family:"+confStyle.family+"font-weight:bold;font-size:"+confStyle.size+"px;color:#313131;border:100px solid #eee;cursor:pointer;"
+		styleArrow = "border:1px solid #eee;cursor:pointer;padding:1;line-height:8px;";
+		styleDate = "font-family:"+confStyle.family+"font-weight:bold;font-size:"+confStyle.size+"px;color:#313131;border:1px solid #eee;cursor:pointer;"
 
 		headCalendar = "<table width='100%' cellpadding='1' cellspacing='2'><tr><td style='width:5px'><div id='spanLeft' style='"+styleArrow+"' onmouseover='overMonth(this);' onclick='decMonth()' onmouseout='clearInterval(confOther.interval1);outMonth(this);' onmousedown='clearTimeout(confOther.timeout1);confOther.timeout1=setTimeout(\"StartDecMonth()\",500)' onmouseup='clearTimeout(confOther.timeout1);clearInterval(confOther.interval1)'><img id='changeLeft' src='"+confSource.left+"'></div></td>";
 		headCalendar += "<td style='width:5px'><div id='spanRight' style='"+styleArrow+"' onmouseover='overMonth(this);' onmouseout='clearInterval(confOther.interval1);outMonth(this);' onclick='incMonth()' onmousedown='clearTimeout(confOther.timeout1);confOther.timeout1=setTimeout(\"StartIncMonth()\",500)' onmouseup='clearTimeout(confOther.timeout1);clearInterval(confOther.interval1)'><img id='changeRight' src='"+confSource.right+"'></div></td>";
